@@ -1,13 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+import { configStore } from "./redux/configStore";
+import { Provider } from "react-redux";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+// import { TransactionsProvider } from "./context/TransactionContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = configStore();
+const persistor = persistStore(store);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <BrowserRouter forceRefresh={true}>
+        <PersistGate persistor={persistor}>
+          {/* <TransactionsProvider> */}
+          <App />
+          {/* </TransactionsProvider> */}
+        </PersistGate>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
