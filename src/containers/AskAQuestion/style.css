@@ -1,0 +1,10 @@
+.tags span {
+  background: gray;
+  color: white;
+  padding: 2px 1px;
+  margin-right: 3px;
+}
+
+.ReactTags__tagInputField {
+  width: 100%;
+}
