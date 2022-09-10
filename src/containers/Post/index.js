@@ -140,9 +140,7 @@ function Post() {
           publicationId: id,
           contentURI: `ipfs://${uploadResponse.data.IpfsHash}`,
           collectModule: {
-            freeCollectModule: {
-              followerOnly: false,
-            },
+            revertCollectModule: true,
           },
           referenceModule: {
             followerOnlyReferenceModule: false,
