@@ -200,7 +200,7 @@ function CollectModule({ pub }) {
             onClick={createCollect}
           >
             Collect NFT -{" "}
-            {`${pub.collectModule.amount.value} ${pub.collectModule.amount.asset.symbol}`}{" "}
+            {`${pub?.collectModule?.amount?.value} ${pub?.collectModule?.amount?.asset?.symbol}`}{" "}
             {indexing || posting ? "Waiting...." : ""}
           </button>
         ) : (
