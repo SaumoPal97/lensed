@@ -278,6 +278,7 @@ function Post() {
                 {posting ? <p>Uploading....</p> : null}
                 {comments.map((pub) =>
                   pub.collectModule.type === "RevertCollectModule" ||
+                  pub.collectModule.type === "FreeCollectModule" ||
                   pub.hasCollectedByMe ? (
                     <div key={pub.id} className="mt-2">
                       <Publication publication={pub} allowClick={false} />
