@@ -199,9 +199,9 @@ function CollectModule({ pub }) {
             className="bg-tertiary px-2 py-1 rounded-md"
             onClick={createCollect}
           >
-            Collect NFT -{" "}
+            Collect NFT{" "}
             {pub?.collectModule?.amount?.value
-              ? `${pub?.collectModule?.amount?.value} ${pub?.collectModule?.amount?.asset?.symbol}`
+              ? `- ${pub?.collectModule?.amount?.value} ${pub?.collectModule?.amount?.asset?.symbol}`
               : null}{" "}
             {indexing || posting ? "Waiting...." : ""}
           </button>
